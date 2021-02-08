@@ -1,6 +1,8 @@
+const fetch = require("node-fetch")
+
 function fetchQuiz()
 {
-    return { q1: "", a1: [], q2: "", a2: [], q3: "", a3: [], q4: "", a4: [] }
+    return fetch('http://localhost:8080/quiz').then(res => res.json()).catch((err) => console.log(err))
 }
 
 module.exports = fetchQuiz
